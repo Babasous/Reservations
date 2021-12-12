@@ -10,7 +10,7 @@
                     <a class="nav-link" href="{{route('artist_index')}}">Artistes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Roles</a>
+                    <a class="nav-link" href="{{route('type_index')}}">Types</a>
                 </li>
             </ul>
         </div>

@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ArtistController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\ArtistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('/artist/{id}', [ArtistController::class, 'show'])->name('artist_show
 
 //Type
 Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index');
+Route::get('/type/{id}', [TypeController::class, 'show'])->name('type_show');
