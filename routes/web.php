@@ -33,3 +33,7 @@ Route::get('/type/{id}', [TypeController::class, 'show'])->name('type_show');
 //Locality
 Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality_index');
 Route::get('/locality/{id}', [LocalityController::class, 'show'])->name('locality_show');
+
+//Role
+Route::get('/liste_roles', [RoleController::class, 'index'])->name('role_index');
+Route::get('/role/{id}', [RoleController::class, 'show'])->name('role_show');
