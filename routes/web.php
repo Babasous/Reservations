@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\LocalityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,5 @@ Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index')
 Route::get('/type/{id}', [TypeController::class, 'show'])->name('type_show');
 
 //Locality
-Route::get('/locality_types', [LocalityController::class, 'index'])->name('locality_index');
+Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality_index');
 Route::get('/locality/{id}', [LocalityController::class, 'show'])->name('locality_show');

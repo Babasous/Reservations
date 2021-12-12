@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('type_index')}}">Types</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('locality_index')}}">Localités</a>
+                </li>
             </ul>
         </div>
     </div>
