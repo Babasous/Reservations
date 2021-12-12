@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home_page');
 
-Route::get('/artist', [ArtistController::class, 'index'])->name('artist_index');
+//Artiste
+Route::get('/liste_artistes', [ArtistController::class, 'index'])->name('artist_index');
 
 // Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id','[0-10]+')->name('artist_show');
 Route::get('/artist/{id}', [ArtistController::class, 'show'])->name('artist_show');
+
+//Type
+Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index');

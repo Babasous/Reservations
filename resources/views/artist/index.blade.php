@@ -4,7 +4,6 @@
 
 @section('content')
     <h1>Liste des {{ $resource }}</h1>
-
     <table>
         <thead>
             <tr>
@@ -15,7 +14,9 @@
         <tbody>
         @foreach($artists as $artist)
             <tr>
-                <td>{{ $artist->firstname }}</td>
+                <td>
+                    <a href="{{ route('artist_show', $artist->id) }}">{{ $artist->firstname}}</a>
+                </td>
                 <td>
                     <a href="{{ route('artist_show', $artist->id) }}">{{ $artist->lastname }}</a>
                 </td>
@@ -23,4 +24,14 @@
         @endforeach
         </tbody>
     </table>
+ 
+    {{-- Liste déroulante --}}
+    {{-- <select>
+        @foreach($artists as $artist)
+            <option>
+                <a href="{{ route('artist_show', $artist->id) }}">{{ $artist->firstname}} {{ $artist->lastname }}</a>
+            </option>
+        @endforeach
+    </select> --}}
+
 @endsection
