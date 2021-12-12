@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ArtistSeeder::class,
             TypeSeeder::class,
+            LocalitySeeder::class,
         ]);
 
         // \App\Models\User::factory(10)->create();

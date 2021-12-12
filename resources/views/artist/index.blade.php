@@ -24,14 +24,4 @@
         @endforeach
         </tbody>
     </table>
- 
-    {{-- Liste déroulante --}}
-    {{-- <select>
-        @foreach($artists as $artist)
-            <option>
-                <a href="{{ route('artist_show', $artist->id) }}">{{ $artist->firstname}} {{ $artist->lastname }}</a>
-            </option>
-        @endforeach
-    </select> --}}
-
 @endsection

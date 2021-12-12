@@ -28,3 +28,7 @@ Route::get('/artist/{id}', [ArtistController::class, 'show'])->name('artist_show
 //Type
 Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index');
 Route::get('/type/{id}', [TypeController::class, 'show'])->name('type_show');
+
+//Locality
+Route::get('/locality_types', [LocalityController::class, 'index'])->name('locality_index');
+Route::get('/locality/{id}', [LocalityController::class, 'show'])->name('locality_show');
