@@ -9,4 +9,4 @@
             <li><a href="{{route('locality_show', $locality->id)}}">{{$locality->postal_code}} {{ucfirst($locality->locality)}}</a></li>              
         @endforeach
     </ul>
-    @endsection
+@endsection

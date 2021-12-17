@@ -30,5 +30,8 @@ class LocalitySeeder extends Seeder
         ];
 
         DB::table('localities')->insert($localities);
+
+       /*  DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::statement('SET_FOREIGN_KEY_CHECKS=1'); */
     }
 }

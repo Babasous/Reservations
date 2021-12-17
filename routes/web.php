@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\LocalityController;

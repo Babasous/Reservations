@@ -6,7 +6,7 @@
     <h1>Liste des {{ $resource}}</h1>    
     <ul>
         @foreach($roles as $role)            
-            <li><a href="{{route('role_show', $role->id)}}">{{$role->role}} {{ucfirst($role->role)}}</a></li>              
+            <li><a href="{{route('role_show', $role->id)}}">{{ucfirst($role->role)}}</a></li>              
         @endforeach
     </ul>
-    @endsection
+@endsection
