@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('role_index')}}">Roles</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('location_index')}}">Location</a>
+                </li>
             </ul>
         </div>
     </div>
