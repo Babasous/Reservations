@@ -25,7 +25,7 @@
                     <a class="nav-link" href="{{route('show_index')}}">Spéctacles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('representation_index')}}">Representations</a>
+                    <a class="nav-link" href="{{route('representation_index')}}">Représentations</a>
                 </li>
             </ul>
         </div>
