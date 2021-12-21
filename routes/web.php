@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ShowController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\LocalityController;
@@ -43,3 +44,7 @@ Route::get('/role/{id}', [RoleController::class, 'show'])->where('id', '[0-9]+')
 //Location
 Route::get('location', [LocationController::class, 'index'])->name('location_index');
 Route::get('location/{id}', [LocationController::class, 'show'])->where('id', '[0-9]+')->name('location_show');
+
+//Show
+Route::get('/show', [ShowController::class, 'index'])->name('show_index');
+Route::get('/show/{id}', [ShowController::class, 'show'])->where('id', '[0-9]+')->name('show_show');
