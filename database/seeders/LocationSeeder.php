@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Support\Str;
 use App\Models\Locality;
+use App\Models\Location;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,6 +17,11 @@ class LocationSeeder extends Seeder
      */
     public function run()
     {
+        //Empty the table first
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Location::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
         //Define data
         $locations = [
             [

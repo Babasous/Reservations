@@ -25,16 +25,16 @@ Route::get('/', function () {
 Route::get('/liste_artistes', [ArtistController::class, 'index'])->name('artist_index');
 
 // Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id','[0-10]+')->name('artist_show');
-Route::get('/artist/{id}', [ArtistController::class, 'show'])->name('artist_show');
+Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id', '[0-9]+')->name('artist_show');
 
 //Type
 Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index');
-Route::get('/type/{id}', [TypeController::class, 'show'])->name('type_show');
+Route::get('/type/{id}', [TypeController::class, 'show'])->where('id', '[0-9]+')->name('type_show');
 
 //Locality
 Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality_index');
-Route::get('/locality/{id}', [LocalityController::class, 'show'])->name('locality_show');
+Route::get('/locality/{id}', [LocalityController::class, 'show'])->where('id', '[0-9]+')->name('locality_show');
 
 //Role
 Route::get('/liste_roles', [RoleController::class, 'index'])->name('role_index');
-Route::get('/role/{id}', [RoleController::class, 'show'])->name('role_show');
+Route::get('/role/{id}', [RoleController::class, 'show'])->where('id', '[0-9]+')->name('role_show');

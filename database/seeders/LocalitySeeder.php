@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Locality;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class LocalitySeeder extends Seeder
 {
+    
     /**
      * Run the database seeds.
      *
@@ -14,6 +16,11 @@ class LocalitySeeder extends Seeder
      */
     public function run()
     {
+        //Empty the table first
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Locality::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
         $localities = [
             [
                 'postal_code' => '1000',
@@ -31,7 +38,5 @@ class LocalitySeeder extends Seeder
 
         DB::table('localities')->insert($localities);
 
-       /*  DB::statement('SET FOREIGN_KEY_CHECKS=0');
-        DB::statement('SET_FOREIGN_KEY_CHECKS=1'); */
     }
 }
