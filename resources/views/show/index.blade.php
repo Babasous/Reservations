@@ -10,7 +10,7 @@
     <li>
         <a href="{{ route('show_show', $show->id) }}">{{ $show->title }}</a>
         @if($show->bookable)
-        <span>{{ $show->price }} €</span>
+            <span>{{ $show->price }} €</span>
         @endif
     </li>
     @endforeach
