@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Show;
 use App\Models\Location;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
@@ -15,7 +16,12 @@ class ShowSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        
+    {    
+        //Empty the table first
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Show::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+    
         //Define data
         $shows = [
             [
