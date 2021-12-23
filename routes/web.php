@@ -26,8 +26,6 @@ Route::get('/', function () {
 
 //Artiste
 Route::get('/liste_artistes', [ArtistController::class, 'index'])->name('artist_index');
-
-// Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id','[0-10]+')->name('artist_show');
 Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id', '[0-9]+')->name('artist_show');
 
 //Type
@@ -53,3 +51,4 @@ Route::get('/show/{id}', [ShowController::class, 'show'])->where('id', '[0-9]+')
 //Representation
 Route::get('/representation', [RepresentationController::class, 'index'])->name('representation_index');
 Route::get('/representation/{id}', [RepresentationController::class, 'show'])->where('id', '[0-9]+')->name('representation_show');
+

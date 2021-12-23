@@ -61,4 +61,8 @@ class Show extends Model
     {
         return $this->belongsToMany(ArtistType::class);
     }
+
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }
