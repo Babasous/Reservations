@@ -49,6 +49,9 @@ Route::put('/locality/{id}', [LocalityController::class, 'update'])->where('id',
 //Role
 Route::get('/liste_roles', [RoleController::class, 'index'])->name('role_index');
 Route::get('/role/{id}', [RoleController::class, 'show'])->where('id', '[0-9]+')->name('role_show');
+//Role: Formulairelse
+Route::get('/role/edit/{id}', [ROleController::class, 'edit'])->where('id', '[0-9]+')->name('role_edit');
+Route::put('/role/{id}', [ROleController::class, 'update'])->where('id', '[0-9]+')->name('role_update');
 
 //Location
 Route::get('location', [LocationController::class, 'index'])->name('location_index');
