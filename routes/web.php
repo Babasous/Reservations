@@ -42,6 +42,9 @@ Route::put('/type/{id}', [TypeController::class, 'update'])->where('id', '[0-9]+
 //Locality
 Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality_index');
 Route::get('/locality/{id}', [LocalityController::class, 'show'])->where('id', '[0-9]+')->name('locality_show');
+//Locality: Formulairelse
+Route::get('/locality/edit/{id}', [LocalityController::class, 'edit'])->where('id', '[0-9]+')->name('locality_edit');
+Route::put('/locality/{id}', [LocalityController::class, 'update'])->where('id', '[0-9]+')->name('locality_update');
 
 //Role
 Route::get('/liste_roles', [RoleController::class, 'index'])->name('role_index');
