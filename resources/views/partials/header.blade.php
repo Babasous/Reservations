@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container">
-        <a class="navbar-brand" href="{{route('home_page')}}">Théatre bELwag</a>
+        <a class="navbar-brand" href="{{route('home_page')}}">bELwag</a>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
                 <li class="nav-item">

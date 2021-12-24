@@ -27,6 +27,10 @@ Route::get('/', function () {
 //Artiste
 Route::get('/liste_artistes', [ArtistController::class, 'index'])->name('artist_index');
 Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id', '[0-9]+')->name('artist_show');
+//Artiste: Formulairelse
+Route::get('/artist/edit/{id}', [ArtistController::class, 'edit'])->where('id', '[0-9]+')->name('artist_edit');
+Route::put('/artist/{id}', [ArtistController::class, 'update'])->where('id', '[0-9]+')->name('artist_update');
+
 
 //Type
 Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index');
