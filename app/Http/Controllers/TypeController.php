@@ -66,7 +66,11 @@ class TypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $type = Type::find($id);
+        
+        return view('type.edit',[
+            'type' => $type,
+        ]);
     }
 
     /**
@@ -78,7 +82,21 @@ class TypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+           //Validation des données du formulaire
+           $validated = $request->validate([
+            'type' => 'required|max:60',
+        ]);
+
+	   //Le formulaire a été validé, nous récupérons l’artiste à modifier
+        $type = Type::find($id);
+
+	   //Mise à jour des données modifiées et sauvegarde dans la base de données
+        $type->update($validated);
+
+        return view('type.show',[
+            'type' => $type,
+        ]);
+
     }
 
     /**

@@ -35,6 +35,9 @@ Route::put('/artist/{id}', [ArtistController::class, 'update'])->where('id', '[0
 //Type
 Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index');
 Route::get('/type/{id}', [TypeController::class, 'show'])->where('id', '[0-9]+')->name('type_show');
+//Type: Formulairelse
+Route::get('/type/edit/{id}', [TypeController::class, 'edit'])->where('id', '[0-9]+')->name('type_edit');
+Route::put('/type/{id}', [TypeController::class, 'update'])->where('id', '[0-9]+')->name('type_update');
 
 //Locality
 Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality_index');
