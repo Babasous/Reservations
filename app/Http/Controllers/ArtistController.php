@@ -21,16 +21,7 @@ class ArtistController extends Controller
             'resource' => 'artistes',
         ]);
     }
-    public function index2()
-    {
-        $artists = Artist::all();
-
-        return view('artist.index',[
-            'artists' => $artists,
-            'resource' => 'artistes',
-        ]);
-    }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -38,7 +29,11 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        $artist = new Artist();
+        
+        return view('artist.edit',[
+            'artist' => $artist,
+        ]);
     }
 
     /**
@@ -49,7 +44,7 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

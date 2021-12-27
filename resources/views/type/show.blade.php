@@ -12,7 +12,8 @@
         @endforeach
     </ul> --}}
 
-    <div><a href="{{ route('type_edit' ,$type->id) }}">Modifier</a></div>
+    <div><a href="{{ route('type.edit' ,$type->id) }}">Modifier</a></div>
+    <div><a href="{{ route('type.delete' ,$type->id) }}">Supprimer</a></div>    
 
-    <nav><a href="{{ route('type_index') }}">Retour à l'index</a></nav>
+    <nav><a href="{{ route('type.index') }}">Retour à l'index</a></nav>
 @endsection

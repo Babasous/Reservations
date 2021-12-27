@@ -3,7 +3,7 @@
 @section('title', 'Modifier une localité')
 
 @section('content')
-    <form action="{{ route('locality_update' ,$locality->id) }}" method="post">
+    <form action="{{ route('locality.update' ,$locality->id) }}" method="post">
         @csrf
         @method('PUT')
         <div>
@@ -22,7 +22,7 @@
         </div>
 
         <button>Modifier</button>
-   <a href="{{ route('locality_show',$locality->id) }}">Annuler</a>
+   <a href="{{ route('locality.show',$locality->id) }}">Annuler</a>
     </form>
 
 @if ($errors->any())
@@ -36,5 +36,5 @@
     </div>
 @endif
 
-    <nav><a href="{{ route('locality_index') }}">Retour à l'index</a></nav>
+    <nav><a href="{{ route('locality.index') }}">Retour à l'index</a></nav>
 @endsection

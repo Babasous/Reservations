@@ -12,7 +12,8 @@
         @endforeach
     </ul> --}}
 
-    <div><a href="{{ route('artist_edit' ,$artist->id) }}">Modifier</a></div>
+    <div><a href="{{ route('artist.edit' ,$artist->id) }}">Modifier</a></div>
+    <div><a href="{{ route('artist.delete' ,$artist->id) }}">Supprimer</a></div>
 
-    <nav><a href="{{ route('artist_index') }}">Retour à l'index</a></nav>
+    <nav><a href="{{ route('artist.index') }}">Retour à l'index</a></nav>
 @endsection

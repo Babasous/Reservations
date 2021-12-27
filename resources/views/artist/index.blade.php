@@ -15,13 +15,15 @@
         @foreach($artists as $artist)
             <tr>
                 <td>
-                    <a href="{{ route('artist_show', $artist->id) }}">{{ $artist->firstname}}</a>
+                    <a href="{{ route('artist.show', $artist->id) }}">{{ $artist->firstname}}</a>
                 </td>
                 <td>
-                    <a href="{{ route('artist_show', $artist->id) }}">{{ $artist->lastname }}</a>
+                    <a href="{{ route('artist.show', $artist->id) }}">{{ $artist->lastname }}</a>
                 </td>
             </tr>
         @endforeach
         </tbody>
-    </table>
+    </table><br><br>
+    
+    <div><a href="{{ route('artist.create') }}">Ajouter un artiste</a></div>
 @endsection

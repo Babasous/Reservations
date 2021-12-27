@@ -3,7 +3,7 @@
 @section('title', 'Modifier un role')
 
 @section('content')
-    <form action="{{ route('role_update' ,$role->id) }}" method="post">
+    <form action="{{ route('role.update' ,$role->id) }}" method="post">
         @csrf
         @method('PUT')
         <div>
@@ -22,7 +22,7 @@
         </div>
 
         <button>Modifier</button>
-   <a href="{{ route('role_show',$role->id) }}">Annuler</a>
+   <a href="{{ route('role.show',$role->id) }}">Annuler</a>
     </form>
 
 @if ($errors->any())
@@ -36,5 +36,5 @@
     </div>
 @endif
 
-    <nav><a href="{{ route('artist_index') }}">Retour à l'index</a></nav>
+    <nav><a href="{{ route('artist.index') }}">Retour à l'index</a></nav>
 @endsection

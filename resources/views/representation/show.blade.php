@@ -18,5 +18,5 @@
         </p>
     </article>
     
-    <nav><a href="{{ route('representation_index') }}">Retour à l'index</a></nav>
+    <nav><a href="{{ route('representation.index') }}">Retour à l'index</a></nav>
 @endsection

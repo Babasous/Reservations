@@ -7,25 +7,25 @@
                     <a class="nav-link" href="{{route('home_page')}}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('artist_index')}}">Artistes</a>
+                    <a class="nav-link" href="{{route('artist.index')}}">Artistes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('type_index')}}">Types</a>
+                    <a class="nav-link" href="{{route('type.index')}}">Types</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('locality_index')}}">Localités</a>
+                    <a class="nav-link" href="{{route('locality.index')}}">Localités</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('role_index')}}">Roles</a>
+                    <a class="nav-link" href="{{route('role.index')}}">Roles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('location_index')}}">Lieux</a>
+                    <a class="nav-link" href="{{route('location.index')}}">Lieux</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('show_index')}}">Spéctacles</a>
+                    <a class="nav-link" href="{{route('show.index')}}">Spéctacles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('representation_index')}}">Représentations</a>
+                    <a class="nav-link" href="{{route('representation.index')}}">Représentations</a>
                 </li>
             </ul>
         </div>

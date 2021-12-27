@@ -25,43 +25,49 @@ Route::get('/', function () {
 })->name('home_page');
 
 //Artiste
-Route::get('/liste_artistes', [ArtistController::class, 'index'])->name('artist_index');
-Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id', '[0-9]+')->name('artist_show');
+Route::get('/liste_artistes', [ArtistController::class, 'index'])->name('artist.index');
+Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id', '[0-9]+')->name('artist.show');
 //Artiste: Formulairelse
-Route::get('/artist/edit/{id}', [ArtistController::class, 'edit'])->where('id', '[0-9]+')->name('artist_edit');
-Route::put('/artist/{id}', [ArtistController::class, 'update'])->where('id', '[0-9]+')->name('artist_update');
+Route::get('/artist/{id}/edit', [ArtistController::class, 'edit'])->where('id', '[0-9]+')->name('artist.edit');
+Route::put('/artist/{id}', [ArtistController::class, 'update'])->where('id', '[0-9]+')->name('artist.update');
+Route::get('/artist/create', [ArtistController::class, 'create'])->name('artist.create');
+Route::post('/artist', [ArtistController::class, 'store'])->name('artist.store');
+Route::delete('/artist/{id}', [ArtistController::class, 'destroy'])->where('id', '[0-9]+')->name('artist.delete');
 
 
 //Type
-Route::get('/liste_types', [TypeController::class, 'index'])->name('type_index');
-Route::get('/type/{id}', [TypeController::class, 'show'])->where('id', '[0-9]+')->name('type_show');
+Route::get('/liste_types', [TypeController::class, 'index'])->name('type.index');
+Route::get('/type/{id}', [TypeController::class, 'show'])->where('id', '[0-9]+')->name('type.show');
 //Type: Formulairelse
-Route::get('/type/edit/{id}', [TypeController::class, 'edit'])->where('id', '[0-9]+')->name('type_edit');
-Route::put('/type/{id}', [TypeController::class, 'update'])->where('id', '[0-9]+')->name('type_update');
+Route::get('/type/{id}/edit', [TypeController::class, 'edit'])->where('id', '[0-9]+')->name('type.edit');
+Route::put('/type/{id}', [TypeController::class, 'update'])->where('id', '[0-9]+')->name('type.update');
+Route::delete('/type/{id}', [TypeController::class, 'destroy'])->where('id', '[0-9]+')->name('type.delete');
 
 //Locality
-Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality_index');
-Route::get('/locality/{id}', [LocalityController::class, 'show'])->where('id', '[0-9]+')->name('locality_show');
+Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality.index');
+Route::get('/locality/{id}', [LocalityController::class, 'show'])->where('id', '[0-9]+')->name('locality.show');
 //Locality: Formulairelse
-Route::get('/locality/edit/{id}', [LocalityController::class, 'edit'])->where('id', '[0-9]+')->name('locality_edit');
-Route::put('/locality/{id}', [LocalityController::class, 'update'])->where('id', '[0-9]+')->name('locality_update');
+Route::get('/locality/{id}/edit', [LocalityController::class, 'edit'])->where('id', '[0-9]+')->name('locality.edit');
+Route::put('/locality/{id}', [LocalityController::class, 'update'])->where('id', '[0-9]+')->name('locality.update');
+Route::delete('/locality/{id}', [LocalityController::class, 'destroy'])->where('id', '[0-9]+')->name('locality.delete');
 
 //Role
-Route::get('/liste_roles', [RoleController::class, 'index'])->name('role_index');
-Route::get('/role/{id}', [RoleController::class, 'show'])->where('id', '[0-9]+')->name('role_show');
+Route::get('/liste_roles', [RoleController::class, 'index'])->name('role.index');
+Route::get('/role/{id}', [RoleController::class, 'show'])->where('id', '[0-9]+')->name('role.show');
 //Role: Formulairelse
-Route::get('/role/edit/{id}', [ROleController::class, 'edit'])->where('id', '[0-9]+')->name('role_edit');
-Route::put('/role/{id}', [ROleController::class, 'update'])->where('id', '[0-9]+')->name('role_update');
+Route::get('/role/{id}/edit', [ROleController::class, 'edit'])->where('id', '[0-9]+')->name('role.edit');
+Route::put('/role/{id}', [ROleController::class, 'update'])->where('id', '[0-9]+')->name('role.update');
+Route::delete('/role/{id}', [ROleController::class, 'destroy'])->where('id', '[0-9]+')->name('role.delete');
 
 //Location
-Route::get('location', [LocationController::class, 'index'])->name('location_index');
-Route::get('location/{id}', [LocationController::class, 'show'])->where('id', '[0-9]+')->name('location_show');
+Route::get('location', [LocationController::class, 'index'])->name('location.index');
+Route::get('location/{id}', [LocationController::class, 'show'])->where('id', '[0-9]+')->name('location.show');
 
 //Show
-Route::get('/show', [ShowController::class, 'index'])->name('show_index');
-Route::get('/show/{id}', [ShowController::class, 'show'])->where('id', '[0-9]+')->name('show_show');
+Route::get('/show', [ShowController::class, 'index'])->name('show.index');
+Route::get('/show/{id}', [ShowController::class, 'show'])->where('id', '[0-9]+')->name('show.show');
 
 //Representation
-Route::get('/representation', [RepresentationController::class, 'index'])->name('representation_index');
-Route::get('/representation/{id}', [RepresentationController::class, 'show'])->where('id', '[0-9]+')->name('representation_show');
+Route::get('/representation', [RepresentationController::class, 'index'])->name('representation.index');
+Route::get('/representation/{id}', [RepresentationController::class, 'show'])->where('id', '[0-9]+')->name('representation.show');
 

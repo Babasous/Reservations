@@ -3,7 +3,7 @@
 @section('title', 'Modifier un type')
 
 @section('content')
-    <form action="{{ route('type_update' ,$type->id) }}" method="post">
+    <form action="{{ route('type.update' ,$type->id) }}" method="post">
         @csrf
         @method('PUT')
         <div>
@@ -22,7 +22,7 @@
         </div>
         
         <button>Modifier</button>
-   <a href="{{ route('type_show',$type->id) }}">Annuler</a>
+   <a href="{{ route('type.show',$type->id) }}">Annuler</a>
     </form>
 
 @if ($errors->any())
@@ -36,5 +36,5 @@
     </div>
 @endif
 
-    <nav><a href="{{ route('type_index') }}">Retour à l'index</a></nav>
+    <nav><a href="{{ route('type.index') }}">Retour à l'index</a></nav>
 @endsection

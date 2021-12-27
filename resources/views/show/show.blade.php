@@ -68,5 +68,5 @@
 
     </article>
 
-    <nav><a href="{{ route('show_index') }}">Retour à l'index</a></nav>
+    <nav><a href="{{ route('show.index') }}">Retour à l'index</a></nav>
 @endsection
