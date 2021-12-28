@@ -25,5 +25,5 @@
         </tbody>
     </table><br><br>
     
-    <div><a href="{{ route('artist.create') }}">Ajouter un artiste</a></div>
+    <div><h3><a href="{{ route('artist.create') }}">Ajouter un artiste</a></h3></div>
 @endsection

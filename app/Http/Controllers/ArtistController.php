@@ -31,7 +31,7 @@ class ArtistController extends Controller
     {
         $artist = new Artist();
         
-        return view('artist.edit',[
+        return view('artist.create',[
             'artist' => $artist,
         ]);
     }
@@ -44,7 +44,28 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        //Validation des données du formulaire
+         $validated = $request->validate([
+            'firstname' => 'required|min:3|max:60',
+            'lastname' => 'required|min:3|max:60',
+        ]);
+        //dd($validated);
+
+        $firstname = $request->input('firstname');
+        $lastname = $request->input('lastname');
+
+	   //Le formulaire a été validé, nous récupérons l’artiste à modifier
+        $artist = new Artist();
+
+	   //Sauvegarde des données dans la base de données
+        $artist->firstname = $firstname;
+        $artist->lastname = $lastname;
+
+        $artist->save();
+
+        return view('artist.show',[
+            'artist' => $artist,
+        ]);
     }
 
     /**
@@ -102,7 +123,6 @@ class ArtistController extends Controller
         return view('artist.show',[
             'artist' => $artist,
         ]);
-
     }
 
     /**
@@ -113,6 +133,17 @@ class ArtistController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $artist = Artist::find($id);
+
+        $artist->delete();
+
+       /* $artists = Artist::all();
+
+         return view('artist.index',[
+            'artists' => $artists,
+            'resource' => 'artistes',
+        ]); */
+
+        return redirect()->route('artist.index');
     }
 }
