@@ -10,8 +10,14 @@
         @endforeach
     </ul>
 
-    <div><a href="{{ route('locality.edit' ,$locality->id) }}">Modifier</a></div>
-    <div><a href="{{ route('locality.delete' ,$locality->id) }}">Supprimer</a></div>
+    <div><a href="{{ route('locality.edit', $locality->id) }}">Modifier</a></div>
+    <div>
+        <form action="{{ route('locality.destroy', $locality->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button>Supprimer</button>
+        </form>
+    </div>
     
 
     <nav><a href="{{ route('locality.index') }}">Retour à l'index</a></nav>

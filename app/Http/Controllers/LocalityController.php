@@ -29,7 +29,11 @@ class LocalityController extends Controller
      */
     public function create()
     {
-        //
+        $locality = new Locality();
+
+        return view('locality.edit',[
+            'locality' => $locality,
+        ]);
     }
 
     /**
@@ -40,7 +44,28 @@ class LocalityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validation des données du formulaire
+        $validated = $request->validate([
+            'postal_code' => 'required|min:4|max:6',
+            'locality' => 'required|min:3|max:60',
+        ]);
+        //dd($validated);
+
+        $postal_code = $request->input('postal_code');
+        $locality = $request->input('locality');
+
+	   
+        $locality = new Locality();
+
+	   //Sauvegarde des données dans la base de données
+        $locality->postal_code = $postal_code;
+        $locality->locality = $locality;
+
+        $locality->save();
+
+        return view('locality.show',[
+            'locality' => $locality,
+        ]);
     }
 
     /**
@@ -108,6 +133,17 @@ class LocalityController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $locality = Locality::find($id);
+
+        $locality->delete();
+
+       /* $localities = Locality::all();
+
+         return view('locality.index',[
+            'localities' => $localities,
+            'resource' => 'localities',
+        ]); */
+
+        return redirect()->route('locality.index');
     }
 }

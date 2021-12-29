@@ -3,9 +3,17 @@
 @section('title', 'Modifier une localité')
 
 @section('content')
-    <form action="{{ route('locality.update' ,$locality->id) }}" method="post">
+    @if($locality->id)
+      <h3>Modification de la localité: {{ $locality->postal_code }} {{ $locality->locality }}</h3>
+    @else
+    <h3>Ajout d'une localité</h3>
+    @endif
+    <form action="{{ ($locality->id) ? route('locality.update' , $locality->id) : route('locality.store') }}" method="post">
         @csrf
-        @method('PUT')
+        @if($locality->id)
+           @method('PUT')
+        @endif
+        
         <div>
             <label for="postal_code">Code postal</label>
             <input type="text" id="postal_code" name="postal_code" 
@@ -16,13 +24,31 @@
             @endif
 	           class="@error('postal_code') is-invalid @enderror">
 
-	@error('postal_code')
-            <div class="alert alert-danger">{{ $message }}</div>
-     @enderror
+            @error('postal_code')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
+        <div>
+            <label for="locality">Localité</label>
+            <input type="text" id="locality" name="locality" 
+	       @if(old('locality'))
+                value="{{ old('locality') }}" 
+            @else
+                value="{{ $locality->locality }}" 
+            @endif
+	           class="@error('locality') is-invalid @enderror">
 
-        <button>Modifier</button>
-   <a href="{{ route('locality.show',$locality->id) }}">Annuler</a>
+            @error('locality')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        @if($locality->id)
+            <button>Modifier</button>
+        @else
+            <button>Ajouter une localité</button>
+        @endif
+        
+   {{-- <a href="{{ route('locality.show',$locality->id) }}">Annuler</a> --}}
     </form>
 
 @if ($errors->any())

@@ -55,9 +55,14 @@ Route::delete('/type/{id}', [TypeController::class, 'destroy'])->where('id', '[0
 Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality.index');
 Route::get('/locality/{id}', [LocalityController::class, 'show'])->where('id', '[0-9]+')->name('locality.show');
 //Locality: Formulaire
+    //Modifier une localité
 Route::get('/locality/{id}/edit', [LocalityController::class, 'edit'])->where('id', '[0-9]+')->name('locality.edit');
 Route::put('/locality/{id}', [LocalityController::class, 'update'])->where('id', '[0-9]+')->name('locality.update');
-Route::delete('/locality/{id}', [LocalityController::class, 'destroy'])->where('id', '[0-9]+')->name('locality.delete');
+    //Ajouter une localité
+Route::get('/locality/create', [LocalityController::class, 'create'])->name('locality.create');
+Route::post('/locality', [LocalityController::class, 'store'])->name('locality.store');
+    //Supprimer une localité
+Route::delete('/locality/{id}', [LocalityController::class, 'destroy'])->where('id', '[0-9]+')->name('locality.destroy');
 
 //Role
 Route::get('/liste_roles', [RoleController::class, 'index'])->name('role.index');
@@ -65,7 +70,7 @@ Route::get('/role/{id}', [RoleController::class, 'show'])->where('id', '[0-9]+')
 //Role: Formulaire
 Route::get('/role/{id}/edit', [ROleController::class, 'edit'])->where('id', '[0-9]+')->name('role.edit');
 Route::put('/role/{id}', [ROleController::class, 'update'])->where('id', '[0-9]+')->name('role.update');
-Route::delete('/role/{id}', [ROleController::class, 'destroy'])->where('id', '[0-9]+')->name('role.delete');
+Route::delete('/role/{id}', [ROleController::class, 'destroy'])->where('id', '[0-9]+')->name('role.destroy');
 
 //Location
 Route::get('location', [LocationController::class, 'index'])->name('location.index');
