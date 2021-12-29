@@ -37,7 +37,6 @@
         </div>
 
         <button>Ajouter</button>
-        <a href="{{ route('artist.store') }}">Annuler</a>
     </form>
 
     @if ($errors->any())

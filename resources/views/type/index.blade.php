@@ -6,9 +6,9 @@
     <h1>Liste des {{ $resource}}</h1>    
     <ul>
         @foreach($types as $type)            
-            <li><a href="{{route('type.show', $type->id)}}">{{ucfirst($type->type)}}</a></li>              
+            <li><a href="{{ route('type.show', $type->id) }}">{{ ucfirst($type->type) }}</a></li>              
         @endforeach
     </ul>
 
-    <div><a href="{{ route('type.index' , $type->id) }}">Ajouter un type</a></div>
+    <div><h3><a href="{{ route('type.create') }}">Ajouter un type</a></h3></div>
 @endsection

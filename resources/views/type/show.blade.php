@@ -12,8 +12,14 @@
         @endforeach
     </ul> --}}
 
-    <div><a href="{{ route('type.edit' ,$type->id) }}">Modifier</a></div>
-    <div><a href="{{ route('type.delete' ,$type->id) }}">Supprimer</a></div>    
+    <div><a href="{{ route('type.edit', $type->id) }}">Modifier</a></div>
+    <div>
+        <form action="{{ route('type.destroy', $type->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button>Supprimer</button>
+        </form>
+    </div>    
 
     <nav><a href="{{ route('type.index') }}">Retour à l'index</a></nav>
 @endsection

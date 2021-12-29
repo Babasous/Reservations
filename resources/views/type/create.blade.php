@@ -3,20 +3,17 @@
 @section('title', 'Modifier un type')
 
 @section('content')
-    
-    <h3>Modification du type: {{ $type->type }}</h3>
-    
-    <form action="{{ route('type.update' , $type->id) }}" method="post">
+    <h3>Ajout du type</h3>
+    <form action="{{ route('type.store') }}" method="post">
         @csrf
-        @method('PUT')
-        
+        @method('POST')
         <div>
             <label for="type">Type</label>
             <input type="text" id="type" name="type" 
 	       @if(old('type'))
                 value="{{ old('type') }}" 
             @else
-                value="{{ $type->type ?? '' }}" 
+                value="{{ $type->type }}" 
             @endif
 	           class="@error('type') is-invalid @enderror">
 
@@ -25,8 +22,8 @@
             @enderror
         </div>
 
-        <button>Modifier</button>      
-
+        <button>Ajouter</button>
+        
     </form>
 
     @if ($errors->any())

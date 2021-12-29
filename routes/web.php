@@ -46,10 +46,10 @@ Route::get('/type/{id}', [TypeController::class, 'show'])->where('id', '[0-9]+')
 Route::get('/type/{id}/edit', [TypeController::class, 'edit'])->where('id', '[0-9]+')->name('type.edit');
 Route::put('/type/{id}', [TypeController::class, 'update'])->where('id', '[0-9]+')->name('type.update');
     //Ajouter un type
-
-
+Route::get('/type/create', [TypeController::class, 'create'])->name('type.create');
+Route::post('/type', [TypeController::class, 'store'])->name('type.store');
     //Supprimer  un type
-Route::delete('/type/{id}', [TypeController::class, 'destroy'])->where('id', '[0-9]+')->name('type.delete');
+Route::delete('/type/{id}', [TypeController::class, 'destroy'])->where('id', '[0-9]+')->name('type.destroy');
 
 //Locality
 Route::get('/liste_localities', [LocalityController::class, 'index'])->name('locality.index');
