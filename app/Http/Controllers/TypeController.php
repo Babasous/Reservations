@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class TypeController extends Controller
 {
@@ -15,7 +16,7 @@ class TypeController extends Controller
     public function index()
     {
         $types = Type::all();
-
+              
         return view('type.index',[
             'types' => $types,
             'resource' => 'types',
@@ -73,8 +74,12 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        $type = Type::find($id);
+        $type = Type::find($id); 
 
+        if($type == null){
+            return Redirect::route('type.index');
+        }
+        
         return view('type.show',[
             'type' => $type,
         ]);

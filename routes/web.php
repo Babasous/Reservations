@@ -25,7 +25,7 @@ Route::get('/', function () {
 })->name('home_page');
 
 //Artiste
-Route::get('/liste_artistes', [ArtistController::class, 'index'])->name('artist.index');
+Route::get('/artist', [ArtistController::class, 'index'])->name('artist.index');
 Route::get('/artist/{id}', [ArtistController::class, 'show'])->where('id', '[0-9]+')->name('artist.show');
 //Artiste: Formulaire
     //Modifier un artiste
@@ -68,8 +68,13 @@ Route::delete('/locality/{id}', [LocalityController::class, 'destroy'])->where('
 Route::get('/liste_roles', [RoleController::class, 'index'])->name('role.index');
 Route::get('/role/{id}', [RoleController::class, 'show'])->where('id', '[0-9]+')->name('role.show');
 //Role: Formulaire
+    //Modifier un rôle
 Route::get('/role/{id}/edit', [ROleController::class, 'edit'])->where('id', '[0-9]+')->name('role.edit');
 Route::put('/role/{id}', [ROleController::class, 'update'])->where('id', '[0-9]+')->name('role.update');
+    //Ajout d'un rôle
+Route::get('/role/create', [RoleController::class, 'create'])->name('role.create');
+Route::post('/role', [RoleController::class, 'store'])->name('role.store');
+    //Supprimer un rôle
 Route::delete('/role/{id}', [ROleController::class, 'destroy'])->where('id', '[0-9]+')->name('role.destroy');
 
 //Location

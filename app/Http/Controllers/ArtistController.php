@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ArtistController extends Controller
 {
@@ -53,8 +54,7 @@ class ArtistController extends Controller
 
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
-
-	   //Le formulaire a été validé, nous récupérons l’artiste à modifier
+	   
         $artist = new Artist();
 
 	   //Sauvegarde des données dans la base de données
@@ -77,6 +77,10 @@ class ArtistController extends Controller
     public function show($id)
     {
         $artist = Artist::find($id);
+
+        if($artist == null){
+            return Redirect::route('artist.index');
+        }
 
         return view('artist.show',[
             'artist' => $artist,

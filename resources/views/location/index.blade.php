@@ -3,7 +3,7 @@
 @section('title', 'Liste des lieux de spectacle')
 
 @section('content')
-    <h1>Liste des {{ $resource }}</h1>
+    <h1 class="text-center">Liste des {{ $resource }}</h1>
 	
     <ul>
         @foreach($locations as $location)

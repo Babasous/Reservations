@@ -3,7 +3,7 @@
 @section('title', 'Liste des types d\'artistes')
 
 @section('content')
-    <h1>Liste des {{ $resource}}</h1>    
+    <h1 class="text-center">Liste des {{ $resource}}</h1>    
     <ul>
         @foreach($types as $type)            
             <li><a href="{{ route('type.show', $type->id) }}">{{ ucfirst($type->type) }}</a></li>              
