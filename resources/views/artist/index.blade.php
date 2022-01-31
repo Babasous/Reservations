@@ -3,6 +3,7 @@
 @section('title', 'Liste des artistes')
 
 @section('content')
+<div class="row small-up-2 large-up-4">
     <h3 class="text-center">Liste des {{ $resource }}</h3>
     @foreach ($artists as $artist)
         <div class="column">
@@ -14,28 +15,8 @@
             <a href="{{ route('artist.show', $artist->id) }}" class="button expanded">Afficher</a>
         </div>
     @endforeach
-    
-
-    {{-- <table>
-        <thead>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-            </tr>
-        </thead>
-        <tbody>
-        @foreach($artists as $artist)
-            <tr>
-                <td>
-                    <a href="{{ route('artist.show', $artist->id) }}">{{ $artist->firstname}}</a>
-                </td>
-                <td>
-                    <a href="{{ route('artist.show', $artist->id) }}">{{ $artist->lastname }}</a>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table><br><br> --}}
-    
+      
     <div><h3><a href="{{ route('artist.create') }}">Ajouter un artiste</a></h3></div>
+        
+</div>
 @endsection

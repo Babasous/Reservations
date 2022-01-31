@@ -104,9 +104,10 @@
       </div>
     </div>   
 
-    <div class="row small-up-2 large-up-4">
-      @yield('content')     
-    </div>
+    @yield('content')
+
+    <hr>
+    
     <div class="callout large secondary" style="font-size: 20px">
       <div class="row">
         <div class="large-4 columns">
