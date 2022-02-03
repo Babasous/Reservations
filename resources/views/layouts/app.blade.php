@@ -27,6 +27,7 @@
       <div class="top-bar-right" style="font-size: 30px">
         <ul class="menu">
           <li><a href="#">Login</a></li>
+          <li><a href="#">Register</a></li>
         </ul>
       </div>
     </div>

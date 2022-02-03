@@ -7,8 +7,8 @@
     <h3 class="text-center">Liste des {{ $resource }}</h3>
     @foreach ($artists as $artist)
         <div class="column">
-            <a href="{{ route('artist.show', $artist->id) }}" title="Afficher">
-                <img class="thumbnail" src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png">
+            <a href="{{ route('artist.show', $artist->id) }}" title="Plus d'info">
+                <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzSiIR4dlsyY7W36GFUi3pVAcMp5krhwWgGMIiH6wQqDZyLEXla9LFjStPExinONQISps&usqp=CAU">
             </a>
             <h5>{{ $artist->firstname }} {{ $artist->lastname }}</h5>
             <p>Infos de l'artiste</p>
