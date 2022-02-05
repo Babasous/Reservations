@@ -125,15 +125,15 @@ class ArtistTypeSeeder extends Seeder
             ],
         ];
         
-        //Prepare the data
+        //Préparer les données
         foreach ($artistTypes as &$data) {
-            //Search the artist for a given artist's firstname and lastname
+            //Rechercher l'artiste pour le prénom et le nom d'un artiste donné
             $artist = Artist::where([
                 ['firstname','=',$data['artist_firstname'] ],
                 ['lastname','=',$data['artist_lastname'] ]
             ])->first();
 
-            //Search the type for a given type
+            //Rechercher le type pour un type donné
             $type = Type::firstWhere('type',$data['type']);
             
             unset($data['artist_firstname']);
@@ -145,7 +145,7 @@ class ArtistTypeSeeder extends Seeder
         }
         unset($data);
 
-        //Insert data in the table
+        //Insérer des données dans le tableau
         DB::table('artist_type')->insert($artistTypes);
     }
 

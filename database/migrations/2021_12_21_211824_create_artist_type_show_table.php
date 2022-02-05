@@ -18,10 +18,15 @@ class CreateArtistTypeShowTable extends Migration
             $table->foreignId('artist_type_id');
             $table->foreignId('show_id');
             
-            $table->foreign('artist_type_id')->references('id')->on('artist_type')
-                    ->onDelete('restrict')->onUpdate('cascade');
-            $table->foreign('show_id')->references('id')->on('shows')
-                    ->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('artist_type_id')->references('id')
+                    ->on('artist_type')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+
+            $table->foreign('show_id')->references('id')
+                    ->on('shows')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
         });
     }
 

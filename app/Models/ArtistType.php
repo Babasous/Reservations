@@ -14,6 +14,7 @@ class ArtistType extends Model
     ];
 
     protected $table = 'artist_type';
+
     public $timestamps = false;
     
     /**
@@ -23,6 +24,9 @@ class ArtistType extends Model
     {
         return $this->belongsToMany(Show::class);
     }
+
+
+    //Relations
 
     /**
      * Get the artist for that association.
@@ -39,4 +43,5 @@ class ArtistType extends Model
     {
         return $this->belongsTo(Type::class);
     }
+    
 }

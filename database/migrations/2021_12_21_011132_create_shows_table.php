@@ -25,8 +25,10 @@ class CreateShowsTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
             
-            $table->foreign('location_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
-
+            $table->foreign('location_id')->references('id')
+                ->on('locations')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
         });
     }
 

@@ -31,6 +31,8 @@ class Show extends Model
      */
     protected $table = 'shows';
 
+    //Relations
+
    /**
      * Indicates if the model should be timestamped.
      *
